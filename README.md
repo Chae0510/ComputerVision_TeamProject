@@ -1,4 +1,4 @@
-# ComputerVision_TeamProject
+ㅋ# ComputerVision_TeamProject
 <br>
 ## Introduction
 <img width="1318" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/47feca60-dcb3-44c6-806b-c2ab0c70b93a">
@@ -43,6 +43,7 @@ In each of the three cases, after going through the hyperparameter tuning proces
 
 Among these augmentation methods, the original image that resulted in the highest accuracy and the dataset obtained by rotating, flipping, cropping, and zooming the images are used, respectively.
 The parameters are the final training result using batch size=32, learning rate=0.1, optimizer=sgd, epoch=20, momentum=0 (default).
+
 <img width="586" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/47dbe7a3-c6d3-490b-86f6-ff3274707720">
 
 <img width="601" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/aa3a0e8d-d766-4311-80cb-10300466cbc3">
@@ -58,6 +59,7 @@ Selects the best accuracy from each params set and outputs the params with the b
 Reason for randomly selecting hyperparameter: Because there are a large number of cases that can be sampled, execution time takes a long time. -> In order to select the optimal value within a given time considering the running time, the parameter with the highest accuracy among the randomly rotated parameters is selected as the final parameter and used for test data.
 
 ##### Learning rate
+
 <img width="590" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/8aad9c8b-e9c6-4be3-9740-9db8f22530f5">
 
 After fixing other values, the learning rate values ​​were categorized into four and compared,
@@ -76,19 +78,24 @@ Therefore, after fixing the values ​​(the epoch is fixed to 10 due to GPU is
 
 augmentation=rotation+flip+zoom
 batch size=32, learning rate=0.1, optimizer=sgd, epoch=10, momentum=0, scheduler=stepLR(step_size=10, gamma=0.1)
+
 <img width="520" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/47a605b4-9fcd-4665-9419-2d5898ecac1e">
 
 batch size=32, learning rate=0.1, optimizer=sgd, epoch=10, momentum=0.9, scheduler=stepLR(step_size=10, gamma=0.1)
+
 <img width="515" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/e6a4f6d2-cf12-4c42-8bfb-9ca24fb519ab">
 
 #### Using Resnet 50
+
 <img width="827" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/fae4cf62-f690-4026-86f8-d7fda964a631">
 
 #### Compared Resnet50-B with C, D
+
 <img width="1084" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/abf9c40b-4547-41fa-8e35-95b76a057e12">
 <img width="1065" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/4c575eae-d6ef-4a67-a403-854f8a22cd0d">
 
 ## Experiments
+
 <img width="702" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/76bc4cbd-fbdc-4466-92c8-a0cf77fa24ee">
 
 ### Setting Optimizers
@@ -98,10 +105,12 @@ Small data, in Computer Vision task 👉 Adam is far behind in generalization co
 
 ## Conclusion
 #### Last Epoch & Test Accuracy
-<img width="1134" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/c2093089-0bc2-4de2-91ff-8529b04040da">
+
+<img width="911" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/2ef2853c-bee8-427b-862f-57f8a8b9f487">
 
 #### Compare the grad cam results from our trained model with the original image and reference code.
-<img width="465" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/41bcd300-b8c2-401a-b6c1-2a15c5445645">
+
+<img width="952" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/238a7585-ef52-4097-bec6-d662e1073ca0">
 the appearance of paying more attention to the characteristic parts of the bird.
 
 After data augmentation, good model selection, and hyperparameter tuning, the model can be seen focusing on objects after zero focus on birds.
