@@ -1,7 +1,7 @@
-ㅋ# ComputerVision_TeamProject
+# ComputerVision_TeamProject
 <br>
 ## Introduction
-<img width="1318" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/47feca60-dcb3-44c6-806b-c2ab0c70b93a">
+<img width="1024" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/9411bdae-5517-49dc-8011-5a1c10810ec6">
 
 ## Dataset
 #### CUB_200_2011_repackage_class50
