@@ -17,10 +17,12 @@ crop: Randomly resize and crop to 448x448 size.
 random: Apply one of the above techniques to the image randomly.
 
 After applying various augmentation techniques to the original image, learning was performed by creating a combination of the original image and various techniques.
+
 <img width="897" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/0878080c-1988-4bf6-b9ad-513c15a06114">
 
 
 The summer-galaxy line in the chart above: In the first attempt, only one augmentation technique was applied to the original image and the model was trained only on this data, showing the lowest accuracy and highest loss value. 
+
 <img width="900" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/6f95070b-8d8a-4dd9-828b-45ed98a557ff">
 
 
@@ -29,12 +31,14 @@ The summer-galaxy line in the chart above: In the first attempt, only one augmen
 
 We continued to change the training conditions in a direction that increased the loss to the smallest and accuracy to the highest.
 As a result of augmentation by mixing as many different combinations as possible, 
+
 <img width="629" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/96a0c7ec-2520-424f-8ae2-9e830e0e20e9">
 
 It was confirmed that the highest accuracy was output in these four cases.
 However, in the case of the random color augmentation method used in number 1, if training was performed after fixing the seed value, accuracy was lowered, so it was not included in the next training.
 
 In each of the three cases, after going through the hyperparameter tuning process, through a random search process, the parameter combination that yields the best accuracy value is batch size=32, learning rate=0.1, optimizer=sgd, epoch=20, and momentum=0 (default). I was able to confirm. 
+
 <img width="583" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/1167a3d2-d9c7-4408-b26c-f737e11b8e1f">
 
 Among these augmentation methods, the original image that resulted in the highest accuracy and the dataset obtained by rotating, flipping, cropping, and zooming the images are used, respectively.
@@ -42,10 +46,12 @@ The parameters are the final training result using batch size=32, learning rate=
 <img width="586" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/47dbe7a3-c6d3-490b-86f6-ff3274707720">
 
 <img width="601" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/aa3a0e8d-d766-4311-80cb-10300466cbc3">
+
 (The reason there are up to 40 steps is because the codes with and without augmentation were recorded simultaneously, so 2 steps were recorded per epoch.)
 
 #### HyperParameter tuning
 <img width="584" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/541ffe53-db4e-4bfe-ba7d-b5b1df0d5f83">
+
 Selects the best accuracy from each params set and outputs the params with the best accuracy among several accuracies. -> This params set must be applied to the test.
 
 (Hyperparameters were randomly selected and augmented data was tried 10 times.)
@@ -58,6 +64,7 @@ After fixing other values, the learning rate values ​​were categorized into 
 The validation accuracy value of learning rate 0.1 was the highest.
 
 optimizer
+
 <img width="585" alt="image" src="https://github.com/Chae0510/ComputerVision_TeamProject/assets/85086390/59afcd8e-5ebf-4d0c-b839-c14b4e7a5149">
 
 As a result of performing the same experiment by changing the optimizer to adamw, When comparing the values ​​of validation_accuracy and test_accuracy with SGD, much lower values ​​are obtained.
